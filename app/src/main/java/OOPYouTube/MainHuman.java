@@ -94,3 +94,4 @@ public class MainHuman {
         System.out.println(nameHuman);
     }
 }
+
