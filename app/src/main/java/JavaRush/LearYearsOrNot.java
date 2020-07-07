@@ -10,6 +10,7 @@ public class LearYearsOrNot {
         String day = reader.readLine();
         int number = Integer.parseInt(day);
 
+
         int a = number % 400;
         int b = a % 100;
         int c = b % 4;
