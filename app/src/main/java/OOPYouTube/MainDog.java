@@ -1,5 +1,7 @@
 package OOPYouTube;
 
+import JavaRush.Cat;
+
 public class MainDog {
     public static void main(String[] args) {
         Dog fly = new Dog();
@@ -17,5 +19,7 @@ public class MainDog {
 
         System.out.println("\n" + cherry.info());
         cherry.run();
+
+
     }
 }
