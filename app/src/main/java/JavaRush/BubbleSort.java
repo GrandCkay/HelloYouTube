@@ -10,9 +10,9 @@ public class BubbleSort {
         int i2 = Integer.parseInt(reader.readLine());
         int i3 = Integer.parseInt(reader.readLine());
 
+        int[] numbers = {i1, i2, i3};
         int temp;
         boolean sorted = false;
-        int[] numbers = {i1, i2, i3};
 
         while (!sorted) {
             sorted = true;
