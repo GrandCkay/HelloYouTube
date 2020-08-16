@@ -60,4 +60,9 @@ public class Dog {
         }
         System.out.println(result);
     }
+
+    public void finalize() throws Throwable {
+        super.finalize();
+        System.out.println("A Dog was destroyed");
+    }
 }

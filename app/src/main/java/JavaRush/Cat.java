@@ -1,6 +1,8 @@
 package JavaRush;
 
 
+import OOPYouTube.Dog;
+
 public class Cat {
     private String name;
     private int age;
@@ -45,7 +47,7 @@ public class Cat {
         return score > 0; // return score > 0 ? true : false;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Throwable {
         Cat cat = new Cat("Bob",7,10,5);
         Cat cat1 = new Cat("Ron",8,3,8);
         Cat cat2 = new Cat("Josh", 7,10,5);
@@ -56,6 +58,17 @@ public class Cat {
         System.out.println("2.2 " + cat1.fightJava(cat2));
         System.out.println("2.3 " + cat2.fightJava(cat));
 
+        for (int i = 0; i < 50000; i++) {
+            Cat cats = new Cat();
+            cats.finalize();
+            Dog dog = new Dog();
+            dog.finalize();
+        }
+    }
+
+    protected void finalize() throws Throwable {
+        super.finalize();
+        System.out.println("A Cat was destroyed");
     }
 }
 

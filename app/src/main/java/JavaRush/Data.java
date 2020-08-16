@@ -8,5 +8,6 @@ public class Data {
         SimpleDateFormat formatter = new SimpleDateFormat("dd MM yyyy");
         Date date = new Date();
         System.out.println(formatter.format(date));
+
     }
 }

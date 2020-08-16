@@ -14,6 +14,7 @@ public class Min5 {
         int minimum = min(a, b, c, d, e);
 
         System.out.println("Minimum = " + minimum);
+
     }
 
 

@@ -1,5 +1,7 @@
 package JavaRush;
 
+import OOPYouTube.Dog;
+
 public class Rectangle {
     private int top;
     private int left;
@@ -55,4 +57,5 @@ public class Rectangle {
 //        this.width = rectangle.width;
 //        this.height = rectangle.height;
 //    }
+
 }
