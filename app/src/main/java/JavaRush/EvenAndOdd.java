@@ -12,15 +12,17 @@ public class EvenAndOdd {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         int number = Integer.parseInt(reader.readLine());
 
-        while (number > 0) {
-            if (number % 2 == 0 ) {
-                even++;
-            } else {
-                odd++;
+        if (number > 0) {
+            while (number > 0) {
+                if (number % 2 == 0) {
+                    even++;
+                } else {
+                    odd++;
+                }
+                number = number / 10;
             }
-            number = number / 10;
-        }
 
-        System.out.println("Even: " + even + " Odd: " + odd);
+            System.out.println("Even: " + even + " Odd: " + odd);
+        }
     }
 }
