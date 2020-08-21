@@ -15,6 +15,7 @@ public class BodyIndex {
     }
 
     public static class Body {
+
         public static void calculateMassIndex(double weight, double height) {
             // напишите тут ваш код
 
