@@ -12,10 +12,10 @@ public class WhatToGo {
                 outDoors = "good weather";
             }
 
-        System.out.println("Time: " + time + " hours. Outdoor " + outDoors);
+        System.out.println("TimeTest: " + time + " hours. Outdoor " + outDoors);
 
         if (night) {
-            System.out.println("Time to sleep");
+            System.out.println("TimeTest to sleep");
         }
         if (!night && isGoodWeather) {
             System.out.println("Go to play");
