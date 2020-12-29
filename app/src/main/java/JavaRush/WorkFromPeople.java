@@ -5,31 +5,30 @@ package JavaRush;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.Arrays;
 
 
-interface Person {
-    class User implements Person {
+interface Person1 {
+    class User implements Person1 {
         void live() {
             System.out.println("I usually just live.");
         }
     }
 
-    class Loser implements Person {
+    class Loser implements Person1 {
         void doNothing() {
             System.out.println("I usually do nothing.");
         }
     }
 
-    class Coder implements Person {
+    class Coder implements Person1 {
         void writeCode() {
             System.out.println("I usually write code.");
         }
     }
 
 
-    class Proger implements Person {
+    class Proger implements Person1 {
         void enjoy() {
             System.out.println("It's a wonderful life!");
         }
@@ -39,7 +38,7 @@ interface Person {
 public class WorkFromPeople {
     public static void main(String[] args) throws Exception {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        Person person = null;
+        Person1 person1 = null;
         String key = null;
 
         String[] keysString = {"coder", "loser", "proger", "user"};
@@ -47,25 +46,25 @@ public class WorkFromPeople {
         // 4
         while (Arrays.asList(keysString).contains(key = reader.readLine())) {
             String className = key.substring(0, 1).toUpperCase() + key.substring(1);
-            Class newClass = Class.forName("JavaRush.Person$" + className);
+            Class newClass = Class.forName("JavaRush.Person1$" + className);
 
-            person = (Person) newClass.getConstructor().newInstance();
+            person1 = (Person1) newClass.getConstructor().newInstance();
 
-            doWork(person);
+            doWork(person1);
         }
 
 //        // 3
 //        while (Arrays.asList(keysString).contains(key = reader.readLine())) {
-//            if (key.equalsIgnoreCase(Person.Loser.class.getSimpleName())) {
-//                person = new Person.Loser();
-//            } else if (key.equalsIgnoreCase(Person.User.class.getSimpleName())) {
-//                person = new Person.User();
-//            } else if (key.equalsIgnoreCase(Person.Proger.class.getSimpleName())) {
-//                person = new Person.Proger();
-//            } else if (key.equalsIgnoreCase(Person.Coder.class.getSimpleName())) {
-//                person = new Person.Coder();
+//            if (key.equalsIgnoreCase(Person1.Loser.class.getSimpleName())) {
+//                person1 = new Person1.Loser();
+//            } else if (key.equalsIgnoreCase(Person1.User.class.getSimpleName())) {
+//                person1 = new Person1.User();
+//            } else if (key.equalsIgnoreCase(Person1.Proger.class.getSimpleName())) {
+//                person1 = new Person1.Proger();
+//            } else if (key.equalsIgnoreCase(Person1.Coder.class.getSimpleName())) {
+//                person1 = new Person1.Coder();
 //            }
-//            doWork(person);
+//            doWork(person1);
 //        }
 
 //        // 2
@@ -77,19 +76,19 @@ public class WorkFromPeople {
 //                        //создаем объект, пункт 2
 //            switch (key) {
 //                case "coder":
-//                    person = new Person.Coder();
+//                    person1 = new Person1.Coder();
 //                    break;
 //                case "loser":
-//                    person = new Person.Loser();
+//                    person1 = new Person1.Loser();
 //                    break;
 //                case "proger":
-//                    person = new Person.Proger();
+//                    person1 = new Person1.Proger();
 //                    break;
 //                case "user":
-//                    person = new Person.User();
+//                    person1 = new Person1.User();
 //                    break;
 //            }
-//            doWork(person);
+//            doWork(person1);
 //        }
 
 //        // 1.1
@@ -99,17 +98,17 @@ public class WorkFromPeople {
 //
 //            //создаем объект, пункт 2
 //            if (key.equals("coder")) {
-//                person = new Person.Coder();
-//                doWork(person); //вызываем doWork
+//                person1 = new Person1.Coder();
+//                doWork(person1); //вызываем doWork
 //            } else if (key.equals("loser")) {
-//                person = new Person.Loser();
-//                doWork(person); //вызываем doWork
+//                person1 = new Person1.Loser();
+//                doWork(person1); //вызываем doWork
 //            } else if (key.equals("proger")) {
-//                person = new Person.Proger();
-//                doWork(person); //вызываем doWork
+//                person1 = new Person1.Proger();
+//                doWork(person1); //вызываем doWork
 //            } else if (key.equals("user")) {
-//                person = new Person.User();
-//                doWork(person); //вызываем doWork
+//                person1 = new Person1.User();
+//                doWork(person1); //вызываем doWork
 //            } else {
 //                break;
 //            }
@@ -132,29 +131,29 @@ public class WorkFromPeople {
 //            //создаем объект, пункт 2
 //            for (String item : arrayList) {
 //                if (item.equals("coder")) {
-//                    person = new Person.Coder();
+//                    person1 = new Person1.Coder();
 //                } else if (item.equals("loser")) {
-//                    person = new Person.Loser();
+//                    person1 = new Person1.Loser();
 //                } else if (item.equals("proger")) {
-//                    person = new Person.Proger();
+//                    person1 = new Person1.Proger();
 //                } else if (item.equals("user")) {
-//                    person = new Person.User();
+//                    person1 = new Person1.User();
 //                }
-//                doWork(person); //вызываем doWork
+//                doWork(person1); //вызываем doWork
 //            }
 //        }
     }
 
-    public static void doWork(Person person) {
+    public static void doWork(Person1 person1) {
         // пункт 3
-        if (person instanceof Person.User) {
-            ((Person.User) person).live();
-        } else if (person instanceof Person.Proger) {
-            ((Person.Proger) person).enjoy();
-        } else if (person instanceof Person.Loser) {
-            ((Person.Loser) person).doNothing();
-        } else if (person instanceof Person.Coder) {
-            ((Person.Coder) person).writeCode();
+        if (person1 instanceof Person1.User) {
+            ((Person1.User) person1).live();
+        } else if (person1 instanceof Person1.Proger) {
+            ((Person1.Proger) person1).enjoy();
+        } else if (person1 instanceof Person1.Loser) {
+            ((Person1.Loser) person1).doNothing();
+        } else if (person1 instanceof Person1.Coder) {
+            ((Person1.Coder) person1).writeCode();
         }
     }
 }
