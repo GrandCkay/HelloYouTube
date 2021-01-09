@@ -1,2 +1,3 @@
+include ':libMyJavaLibrary'
 rootProject.name='HelloYouTube'
 include ':app'
