@@ -6,13 +6,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-    /*
-        Разделение файла: 8 уровень, 5 лекция Java Core
-    Считать с консоли три имени файла: файл1, файл2, файл3. Разделить файл1: Первую половину байт записать в файл2,
-    вторую половину байт записать в файл3.
-    Если в файл1 количество байт нечетное, то файл2 должен содержать большую часть.
-    Используй поток FileInputStream, для записи в файлы - FileOutputStream. Закрыть потоки.
-     */
 
 // C:\Users\Home\Desktop\1.txt
 public class FileSplitting {
