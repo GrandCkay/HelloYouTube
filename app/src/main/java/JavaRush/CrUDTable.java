@@ -2,8 +2,6 @@ package JavaRush;
 
 // C:\Users\Home\Desktop\1.txt
 
-import android.icu.text.PluralRules;
-
 import androidx.annotation.NonNull;
 
 import java.io.BufferedReader;
@@ -21,7 +19,7 @@ public class CrUDTable {
             return;
         }
 
-        List<Product> productList = new ArrayList<>();
+        List<Product1> product1List = new ArrayList<>();
         String fileName;
 
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
@@ -30,8 +28,8 @@ public class CrUDTable {
 
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             while (reader.ready()) {
-                Product product = getProduct(reader.readLine());
-                productList.add(product);
+                Product1 product1 = getProduct(reader.readLine());
+                product1List.add(product1);
             }
         }
 
@@ -40,23 +38,23 @@ public class CrUDTable {
                 String name = args[1], price = args[2], quantity = args[3];
                 int id = 0;
 
-                for (Product product : productList) {
-                    if (product.id > id) {
-                        id = product.id;
+                for (Product1 product1 : product1List) {
+                    if (product1.id > id) {
+                        id = product1.id;
                     }
                 }
 
-                Product product = new Product(++id, name, price, quantity);
-                productList.add(product);
+                Product1 product1 = new Product1(++id, name, price, quantity);
+                product1List.add(product1);
 
                 try (FileWriter fileWriter = new FileWriter(fileName, true)) {
-                    fileWriter.write(product.toString());
+                    fileWriter.write(product1.toString());
                 }
                 break;
         }
     }
 
-    public static Product getProduct(String string) {
+    public static Product1 getProduct(String string) {
         int countId = 8, countName = 38, countPrice = 46, countQuantity = 50;
 
         String id = string.substring(0, countId).trim();
@@ -64,17 +62,17 @@ public class CrUDTable {
         String price = string.substring(countName, countPrice).trim();
         String quantity = string.substring(countPrice, countQuantity).trim();
 
-        return new Product(Integer.parseInt(id), name, price, quantity);
+        return new Product1(Integer.parseInt(id), name, price, quantity);
     }
 
     // 3
-    public static class Product {
+    public static class Product1 {
         int id;
         String name;
         String price;
         String quantity;
 
-        public Product(int id, String name, String price, String quantity) {
+        public Product1(int id, String name, String price, String quantity) {
             this.id = id;
             this.name = name;
             this.price = price;
