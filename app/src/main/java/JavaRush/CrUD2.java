@@ -17,16 +17,16 @@ enum Sex {
                За основу берем код class CrUD
 */
 public class CrUD2 {
-    public static volatile List<Person> allPeople = new ArrayList<Person>();
+    public static volatile List<Person2> allPeople = new ArrayList<Person2>();
     public static SimpleDateFormat simpleDateFormatCreate = new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH);
     public static SimpleDateFormat simpleDateFormatInfo = new SimpleDateFormat("dd-MMM-yyyy", Locale.ENGLISH);
 
 
     static {
-        allPeople.add(Person.createMale("Иванов Иван", new Date()));  //сегодня родился    id=0
-        allPeople.add(Person.createMale("Петров Петр", new Date()));  //сегодня родился    id=1
-        allPeople.add(Person.createMale("Иван", new Date()));  //сегодня родился    id=2
-        allPeople.add(Person.createMale("Петр", new Date()));  //сегодня родился    id=3
+        allPeople.add(Person2.createMale("Иванов Иван", new Date()));  //сегодня родился    id=0
+        allPeople.add(Person2.createMale("Петров Петр", new Date()));  //сегодня родился    id=1
+        allPeople.add(Person2.createMale("Иван", new Date()));  //сегодня родился    id=2
+        allPeople.add(Person2.createMale("Петр", new Date()));  //сегодня родился    id=3
     }
 
     public static void main(String[] args) throws ParseException {
@@ -72,9 +72,9 @@ public class CrUD2 {
 
 
             if (stringSex.equals("м")) {
-                allPeople.add(Person.createMale(name, date));
+                allPeople.add(Person2.createMale(name, date));
             } else {
-                allPeople.add(Person.createFemale(name, date));
+                allPeople.add(Person2.createFemale(name, date));
             }
             System.out.println(allPeople.size() - 1);
         }
@@ -114,23 +114,23 @@ public class CrUD2 {
     }
 }
 
-class Person {
+class Person2 {
     private String name;
     private Sex sex;
     private Date birthDate;
 
-    private Person(String name, Sex sex, Date birthDate) {
+    private Person2(String name, Sex sex, Date birthDate) {
         this.name = name;
         this.sex = sex;
         this.birthDate = birthDate;
     }
 
-    public static Person createMale(String name, Date birthDate) {
-        return new Person(name, Sex.MALE, birthDate);
+    public static Person2 createMale(String name, Date birthDate) {
+        return new Person2(name, Sex.MALE, birthDate);
     }
 
-    public static Person createFemale(String name, Date birthDate) {
-        return new Person(name, Sex.FEMALE, birthDate);
+    public static Person2 createFemale(String name, Date birthDate) {
+        return new Person2(name, Sex.FEMALE, birthDate);
     }
 
     public String getName() {
